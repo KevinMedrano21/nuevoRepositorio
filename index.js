@@ -38,13 +38,19 @@ const pokemon = {
 
     calculoDaño: function(dañoEnemigo){
         const calculoDaño = dañoEnemigo - this.defensa 
-        console.log(pokemon.Nombre, "recibio", calculoDaño, "de daño")
-    }
+        
+        if (calculoDaño <= 0) {
+            console.log(pokemon.Nombre, "recibio", "0" , "de daño")
+        
+        }else{
+            console.log(pokemon.Nombre, "recibio", calculoDaño, "de daño")
+        }
+    },
 }
 
 pokemon.realizarAtaque();
 pokemon.realizarDefensa();
-pokemon.calculoDaño(60);
+pokemon.calculoDaño(100);
 
 
 console.log(promedio(8, 9, 7, 9));
