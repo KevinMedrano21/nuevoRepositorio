@@ -29,7 +29,7 @@ app.listen(app.get('port'), () => {
 //conectar a BD
 mongoose.connect("mongodb+srv://node:D1aeN4PszoTM1iiQ@cluster0.hpyaowi.mongodb.net/Hotel?retryWrites=true&w=majority")
 .then(db=>console.log('DB conectada'))
-.catch(err=>console.log('err'));
+.catch(err=>console.log(err));
 
 // establecer sistema de vistas
 app.set('views', path.join(__dirname, 'views'));
