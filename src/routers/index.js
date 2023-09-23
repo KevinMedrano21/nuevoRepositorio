@@ -25,11 +25,14 @@ router.get('/del/:id', async(req,res) => {
     res.redirect('/')
 })
 
-// router.get('/upd/:id', async(req,res) => {
-//     const {id} = req.params;
-//     await Cliente.findByIdAndUpdate(id);
-//     res.redirect('/')
-// })
+
+router.post('/upd/:id', async(req, res)=>{
+    const{id} = req.params;
+    const{nombre, apellido, telefono} = req.body;
+    await Cliente.findByIdAndUpdate(id, {nombre, apellido, telefono});
+    res.redirect('/')
+})
+
 
 module.exports = router;
 
