@@ -85,23 +85,36 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="editModal<%= datos[i]._id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-target="#editModal<%= datos[i]._id %>">
+
+<!-- Modal de actualizacion-->
+<div class="modal fade" id="editModal<%= datos[i]._id %>" tabindex="-1" aria-labelledby="editModalLabel<%= datos[i]._id %>" aria-hidden="true">
     <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Esta seguro que quiere borrar este campo?  </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel<%= datos[i]._id %>">Editar Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/upd/<%= datos[i]._id %>" method="post">
+                    <div class="form-group">
+                        <label for="Cliente" class="form-label">Cliente</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" value="<%= datos[i].nombre %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido" class="form-label">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" value="<%= datos[i].apellido %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="Telefono" class="form-label">Telefono</label>
+                        <input type="text" name="telefono" id="telefono" placeholder="Telefono" class="form-control" value="<%= datos[i].telefono %>">
+                    </div>
+                    <button class="btn btn-primary">Actualizar</button>
+                </form>
+            </div>
         </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a href="/upd/<%=datos[i]._id %>" class="btn btn-primary">Confirmar</a>
-        </div>
-    </div>
     </div>
 </div>
+
 
 
                         </td>
